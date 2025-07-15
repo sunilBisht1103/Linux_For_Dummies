@@ -1,0 +1,18 @@
+1.Kill
+  kill command is used to terminate or send signals to running processes.
+
+kill 5678
+
+SIGTERM (default), -2 SIGINT (interrupt), -9  SIGKILL (immediate termination)
+
+  2.pkill
+  pkill command, you can specify the process name or a pattern that matches the process name.
+
+  pkill -f firefox
+
+3.Nohup
+nohup command allows you to run a process that will continue to run even after you log out, preventing it from being terminated.
+
+  nohup sleep 60 &
+This will run the sleep 60 command in the background, and the output will be saved to a file named nohup.out in the current directory.
+  The & at the end of the command runs the process in the background, and the output shows the process ID (PID) of the background process.
