@@ -1,7 +1,16 @@
-1.Ping
- ping command is a network diagnostic tool used to test the connectivity between a local host and a remote host. It sends Internet Control Message Protocol (ICMP) echo request packets to the target host and waits for the ICMP echo reply.
-ping 127.0.0.1
+## 1.Ping
+ping command is a network diagnostic tool used to test the connectivity between a local host and a remote host. It sends Internet Control Message Protocol (ICMP) echo request packets to the target host and waits for the ICMP echo reply.
 
+
+Input
+
+```bash
+ping 127.0.0.1
+```
+
+Output
+
+```bash
 PING 127.0.0.1 (127.0.0.1) 56(84) bytes of data.
 64 bytes from 127.0.0.1: icmp_seq=1 ttl=64 time=0.027 ms
 64 bytes from 127.0.0.1: icmp_seq=2 ttl=64 time=0.024 ms
@@ -10,6 +19,9 @@ PING 127.0.0.1 (127.0.0.1) 56(84) bytes of data.
 --- 127.0.0.1 ping statistics ---
 3 packets transmitted, 3 received, 0% packet loss, time 2ms
 rtt min/avg/max/mdev = 0.024/0.025/0.027/0.001 ms
+
+```
+
 
 3.Netstat
 netstat command is a powerful tool for monitoring and troubleshooting network connections and network interface statistics.
