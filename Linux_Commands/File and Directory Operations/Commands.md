@@ -1,53 +1,71 @@
 
-##1.Ls :list files and directories, 
+## 1.Ls :list files and directories, 
 #Options
 
 
-#ls-l->displays the long-format listing
-#input
+## ls-l->displays the long-format listing
+## input
+```bash
 ls -l
+```
 
-#Output
+## Output
 -rw-r--r-- 1 labex labex 0 Apr 12 12:34 file1.txt
 
-ls-a->displays all files, including hidden files (files starting with a dot)
-Input
-ls -a 
-Output
+## ls-a->displays all files, including hidden files (files starting with a dot)
+## Input
+```bash
+ls -a
+```
+## Output
 . .. .hidden_file file1.txt file2.txt folder1 folder2
-Ls-h->(human-readable) option to display file sizes in a more readable format:
-input
-ls -lh -h 
-Output
+
+## Ls-h->(human-readable) option to display file sizes in a more readable format:
+## input
+
+```bash
+ls -lh -h
+```
+
+## Output
 drwxr-xr-x 2 labex labex 4.0K Apr 12 12:34 folder1
 Ls-R->list the contents of the current directory and its subdirectories, you can use the -R (recursive) option:
 Input
+```bash
 ls -R ~/project 
+```
 
-Output
+## Output
 ~/project: file1.txt file2.txt folder1 folder2 new_folder 
 
-Cd- change the current working directory
+## 2. Cd- change the current working directory
+
 cd ~ or just cd to go to the home directory (/home/labex)
 cd - to go to the previous working directory
 cd .. to go to the parent directory of the current working directory
 
-Mkdir -create new directories. 
+## 3.Mkdir -create new directories. 
+```bash
 mkdir dir1 dir2 dir3
-
 mkdir -p command allows you to create a directory structure with multiple levels in a single command. 
 mkdir -p projects/web-app/src/components
+```
 
-touch  create new files or update the timestamps of existing files.
+
+
+## 4.touch  create new files or update the timestamps of existing files.
 -a: Updates the access time of the file.
 -m: Updates the modification time of the file.
 -d or -t: Sets the access and modification times to the specified date and time.
 -c or -f: Creates the file if it doesn't exist, without issuing an error message.
 
-
+```bash
 touch new_file.txt
+```
 
-cp command to copy files and directories.
+
+
+## 4.cp command to copy files and directories.
 cp [options] source_file destination_file
 
 -r option is used to copy directories recursively, including all the files and subdirectories within the directory.
@@ -56,7 +74,7 @@ cp ~/project/file1.txt ~/project/file2.txt ~/project/dir1
 
 This will copy file1.txt and file2.txt to the dir1 directory.
 
-mv command is used to move or rename files and directories.
+## 4. mv command is used to move or rename files and directories.
 mv [options] source destination
 
 -i: Interactive mode, prompts before overwriting
@@ -71,7 +89,7 @@ Move a file to a new directory
 mv file1.txt ~/project/new_dir/
 
 
-rm command to remove files and directories. 
+## 4.rm command to remove files and directories. 
 rm [options] file(s)
 
 -f: Force removal of files and directories without prompting for confirmation.
@@ -84,7 +102,7 @@ rm ~/project/test_dir/file1.txt
 rm -r ~/project/test_dir
 
 
-ln command and its practical applications for creating hard links and symbolic links. 
+## 4.ln command and its practical applications for creating hard links and symbolic links. 
  Hard links are essentially copies of the original file, but they share the same inode (file metadata) and physical storage location. This means that changes made to the file content will be reflected in all hard links.
 
 ln original_file hard_link_name
@@ -95,7 +113,7 @@ ln -s original_file symbolic_link_name
 
 
 
-cat command, which is a versatile tool for concatenating and displaying the contents of text files
+## 4. cat command, which is a versatile tool for concatenating and displaying the contents of text files
 Cat [options] [file(s)]
 
 -n: Displays the output with line numbers.
@@ -111,7 +129,7 @@ cat file1.txt file2.txt
 
 cat >> file3.txt
 
-less command allows you to view and navigate through text files efficiently.
+## 4.less command allows you to view and navigate through text files efficiently.
 
 
 less sample.txt
@@ -127,7 +145,7 @@ The less command opens the file in a pager, allowing you to navigate through t
 n: Move to the next occurrence of the search term
 q: Quit the less pager
 
-Search and Highlight Text in less
+## 4.earch and Highlight Text in less
 /Alice
 
 To move to the next occurrence, press n. To move to the previous occurrence, press N.
@@ -137,7 +155,7 @@ to highlight all occurrences of the word "Alice", use the following command:
 -P'Alice'
 
 
-more command in Linux, which is a text file pager that allows you to view the contents of a file one page at a time.
+## 4.more command in Linux, which is a text file pager that allows you to view the contents of a file one page at a time.
 more ~/project/example.txt
 
 This will open the example.txt file and display its contents one page at a time. You can navigate through the file using the following commands:
@@ -146,7 +164,7 @@ This will open the example.txt file and display its contents one page at a tim
 Press b to go back one page.
 Press q to quit the more command
 
-tree command is a powerful tool that displays the directory structure in a tree-like format, making it easier to visualize and navigate the file system.
+## 4.tree command is a powerful tool that displays the directory structure in a tree-like format, making it easier to visualize and navigate the file system.
 Tree
 
 . 
@@ -154,7 +172,7 @@ Tree
 │ └── README.md 
 └── .zshrc
 
-du (disk usage) command in Linux to estimate file space usage and provide information about the disk space occupied by files and directories.
+## 4.du (disk usage) command in Linux to estimate file space usage and provide information about the disk space occupied by files and directories.
 -h: Display the output in human-readable format (e.g., 1.2M instead of 1234567)
 -s: Display the total size of a directory, instead of the size of each file/directory within it
 -c: Display the grand total at the end of the output
@@ -164,7 +182,7 @@ du (disk usage) command in Linux to estimate file space usage and provide infor
 exclude specific directories from the du measurement,
 du -h -d 1 --exclude=subdir1 ~/project/main_dir
 
-The df (disk free) command is an essential utility for displaying information about total, used, and available space on your system's filesystems
+## 4.The df (disk free) command is an essential utility for displaying information about total, used, and available space on your system's filesystems
 
 Df
 
@@ -176,7 +194,7 @@ df -h /
 check the disk usage for your current working directory use a dot .
 df -h .
 
-find command to search for files and directories based on various criteria, such as name, file type, size, and more.
+## 4.find command to search for files and directories based on various criteria, such as name, file type, size, and more.
 find [path] [expression]
 Search for all files in the current directory:
 find .
