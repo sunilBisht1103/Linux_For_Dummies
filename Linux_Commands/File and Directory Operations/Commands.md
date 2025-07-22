@@ -1,33 +1,31 @@
 
 ## 1.Ls :list files and directories, 
-#Options
-
-
+Options
 ## ls-l->displays the long-format listing
-## input
+Input
 ```bash
 ls -l
 ```
-
-## Output
+Output
 -rw-r--r-- 1 labex labex 0 Apr 12 12:34 file1.txt
 
-## ls-a->displays all files, including hidden files (files starting with a dot)
-## Input
+ls-a->displays all files, including hidden files (files starting with a dot)
+
+Input
 ```bash
 ls -a
 ```
-## Output
+Output
 . .. .hidden_file file1.txt file2.txt folder1 folder2
 
-## Ls-h->(human-readable) option to display file sizes in a more readable format:
-## input
+Ls-h->(human-readable) option to display file sizes in a more readable format:
+input
 
 ```bash
 ls -lh -h
 ```
 
-## Output
+Output
 drwxr-xr-x 2 labex labex 4.0K Apr 12 12:34 folder1
 Ls-R->list the contents of the current directory and its subdirectories, you can use the -R (recursive) option:
 Input
@@ -35,7 +33,7 @@ Input
 ls -R ~/project 
 ```
 
-## Output
+Output
 ~/project: file1.txt file2.txt folder1 folder2 new_folder 
 
 ## 2. Cd- change the current working directory
@@ -51,8 +49,6 @@ mkdir -p command allows you to create a directory structure with multiple level
 mkdir -p projects/web-app/src/components
 ```
 
-
-
 ## 4.touch  create new files or update the timestamps of existing files.
 -a: Updates the access time of the file.
 -m: Updates the modification time of the file.
@@ -63,57 +59,62 @@ mkdir -p projects/web-app/src/components
 touch new_file.txt
 ```
 
-
-
-## 4.cp command to copy files and directories.
+## 5.cp command to copy files and directories.
 cp [options] source_file destination_file
 
 -r option is used to copy directories recursively, including all the files and subdirectories within the directory.
-
+```bash
 cp ~/project/file1.txt ~/project/file2.txt ~/project/dir1
-
+```
 This will copy file1.txt and file2.txt to the dir1 directory.
 
-## 4. mv command is used to move or rename files and directories.
+## 6. mv command is used to move or rename files and directories.
 mv [options] source destination
 
 -i: Interactive mode, prompts before overwriting
 -f: Force mode, overwrites without prompting
 -v: Verbose mode, shows the details of the move operation
 Rename a file 
-mv file1.txt file2.txt
 
+```bash
+mv file1.txt file2.txt
+```
 
 Move a file to a new directory 
 
 mv file1.txt ~/project/new_dir/
 
 
-## 4.rm command to remove files and directories. 
+## 7.rm command to remove files and directories. 
 rm [options] file(s)
 
 -f: Force removal of files and directories without prompting for confirmation.
 -r: Recursively remove directories and their contents.
 -i: Prompt for confirmation before removing each file or director
- removing a single file using the rm command:
+
+removing a single file using the rm command:
+```bash
 rm ~/project/test_dir/file1.txt
- remove a directory and its contents, you can use the -r (recursive) option:
-
+```
+remove a directory and its contents, you can use the -r (recursive) option:
+```bash
 rm -r ~/project/test_dir
+```
 
+## 8.ln command and its practical applications for creating hard links and symbolic links. 
+Hard links are essentially copies of the original file, but they share the same inode (file metadata) and physical storage location. This means that changes made to the file content will be reflected in all hard links.
 
-## 4.ln command and its practical applications for creating hard links and symbolic links. 
- Hard links are essentially copies of the original file, but they share the same inode (file metadata) and physical storage location. This means that changes made to the file content will be reflected in all hard links.
-
+```bash
 ln original_file hard_link_name
+```
 
 Symbolic links, also known as soft links, are created using the -s option with the ln command. Symbolic links are pointers to the original file or directory, and they contain the path to the target. Unlike hard links, symbolic links can point to files or directories across file system boundaries
 
+```bash
 ln -s original_file symbolic_link_name
+```
 
-
-
-## 4. cat command, which is a versatile tool for concatenating and displaying the contents of text files
+## 9. cat command, which is a versatile tool for concatenating and displaying the contents of text files
 Cat [options] [file(s)]
 
 -n: Displays the output with line numbers.
@@ -122,18 +123,21 @@ Cat [options] [file(s)]
 
 Concatenate the contents of file1.txt and file2.txt 
 
+```bash
 cat file1.txt file2.txt
+```
 
+append text to file3.txt  append additional text to the file:
 
-## Append text to file3.txt  append additional text to the file:
-
+```bash
 cat >> file3.txt
+```
 
-## 4.less command allows you to view and navigate through text files efficiently.
+## 10.less command allows you to view and navigate through text files efficiently.
 
-
+```bash
 less sample.txt
-
+```
 This is a sample text file for the less command.
 
 The less command opens the file in a pager, allowing you to navigate through the text. Here are some basic navigation commands in less:
@@ -145,7 +149,7 @@ The less command opens the file in a pager, allowing you to navigate through t
 n: Move to the next occurrence of the search term
 q: Quit the less pager
 
-## 4.earch and Highlight Text in less
+earch and Highlight Text in less
 /Alice
 
 To move to the next occurrence, press n. To move to the previous occurrence, press N.
@@ -155,24 +159,28 @@ to highlight all occurrences of the word "Alice", use the following command:
 -P'Alice'
 
 
-## 4.more command in Linux, which is a text file pager that allows you to view the contents of a file one page at a time.
-more ~/project/example.txt
+## 11.more command in Linux, which is a text file pager that allows you to view the contents of a file one page at a time.
 
+```bash
+more ~/project/example.txt
+```
 This will open the example.txt file and display its contents one page at a time. You can navigate through the file using the following commands:
 Press the Space key to display the next page.
 Press the Enter key to display the next line.
 Press b to go back one page.
 Press q to quit the more command
 
-## 4.tree command is a powerful tool that displays the directory structure in a tree-like format, making it easier to visualize and navigate the file system.
-Tree
+## 12.tree command is a powerful tool that displays the directory structure in a tree-like format, making it easier to visualize and navigate the file system.
 
+```bash
+Tree
+```
 . 
 ├── project 
 │ └── README.md 
 └── .zshrc
 
-## 4.du (disk usage) command in Linux to estimate file space usage and provide information about the disk space occupied by files and directories.
+## 13.du (disk usage) command in Linux to estimate file space usage and provide information about the disk space occupied by files and directories.
 -h: Display the output in human-readable format (e.g., 1.2M instead of 1234567)
 -s: Display the total size of a directory, instead of the size of each file/directory within it
 -c: Display the grand total at the end of the output
@@ -180,21 +188,32 @@ Tree
 -d <depth>: Limit the depth of the directory tree that du will display
 
 exclude specific directories from the du measurement,
+
+```bash
 du -h -d 1 --exclude=subdir1 ~/project/main_dir
+```
+## 14.The df (disk free) command is an essential utility for displaying information about total, used, and available space on your system's filesystems
 
-## 4.The df (disk free) command is an essential utility for displaying information about total, used, and available space on your system's filesystems
 
-Df
-
+```bash
+df
+```
+Output
 Filesystem 1K-blocks Used Available Use% Mounted on overlay 20971520 128764 20842756 1% / tmpfs 65536 0 65536 0% /dev tmpfs 8052892 0 8052892 0% /sys/fs/cgroup shm 65536 0 65536 0% /dev/shm /dev/nvme1n1 104806400 20643324 84163076 20% /etc/hosts tmpfs 8052892 0 8052892 0% /proc/acpi tmpfs 8052892 0 8052892 0% /proc/scsi tmpfs 8052892 0 8052892 0% /sys/firmware
 
- disk usage for the root directory, represented by /:
+disk usage for the root directory, represented by /:
+
+```bash
 df -h /
+```
 
 check the disk usage for your current working directory use a dot .
-df -h .
 
-## 4.find command to search for files and directories based on various criteria, such as name, file type, size, and more.
+```bash
+df -h .
+```
+
+## 15.find command to search for files and directories based on various criteria, such as name, file type, size, and more.
 find [path] [expression]
 Search for all files in the current directory:
 find .
