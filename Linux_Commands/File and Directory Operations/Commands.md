@@ -216,18 +216,35 @@ df -h .
 ## 15.find command to search for files and directories based on various criteria, such as name, file type, size, and more.
 find [path] [expression]
 Search for all files in the current directory:
-find .
 
+Input
+```bash
+find .
+```
+Output
 . ./file1.txt ./file2.txt ./directory1 ./directory1/file3.txt
+
 Search for all files with the .txt extension in the current directory:
+
 To search for files by name, you can use the -name
+
+```bash
 find . -name "*.txt"
+```
 ./file1.txt ./file2.txt ./directory1/file3.txt
+
+
 Search for all directories in the current directory:
+
+```bash
 find . -type d
+```
 
 Search for all files larger than 1 megabyte (MB) in the current directory:
+
+```bash
 find . -size +1M
+```
 Search for files by file type:
 To search for files by their type, you can use the -type option followed by the file type character. The common file type characters are:
 of: regular file
@@ -236,20 +253,12 @@ ol: symbolic link
 
 
 Find and delete files:
+
+```bash
 find . -type f -name "*.tmp" -delete
-
+```
 -exec execute commands on matching files:
+
+```bash
 find . -type f -name "*.txt" -exec cat {} \;
-
-Text Processing and Editing
-grep command is a powerful tool used for searching and matching patterns in text files.
-
-grep "fox" sample.txt
-The grep command searches the file and prints out the lines that contain the specified pattern, in this case, "fox".
-
-i option makes the search case-insensitive, so it will match both "dog" and "Dog".
--E option enables extended regular expressions, 
-grep -E "dog.*lazy|lazy.*dog" sample.txt
-
-grep -v command is used to exclude lines that match the given pattern.
-The -n option adds the line number before each matching line.
+```
