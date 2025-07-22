@@ -25,15 +25,20 @@ rtt min/avg/max/mdev = 0.024/0.025/0.027/0.001 ms
 
 netstat command is a powerful tool for monitoring and troubleshooting network connections and network interface statistics.
 
-$ netstat [options]
+netstat [options]
 
 The most common options used with netstat are:
 
 -a: Display all network connections and listening ports
+
 -n: Display numerical addresses instead of resolving hostnames
+
 -t: Display TCP connections
+
 -u: Display UDP connections
+
 -p: Display the process ID and name associated with each connection
+
 -s: Display networking statistics
 
 ## 3.ssh
