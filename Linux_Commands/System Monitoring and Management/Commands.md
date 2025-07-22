@@ -1,9 +1,16 @@
-1.Top
+
+
+## 1.Top
+
  top command provides real-time information about running processes, CPU, memory, and other system resources.
 
-   $ top
+input
 
-   top - 14:22:37 up 1 day, 12:34,  0 users,  load average: 0.00, 0.01, 0.05
+```bash
+ top
+```
+```text
+ top - 14:22:37 up 1 day, 12:34,  0 users,  load average: 0.00, 0.01, 0.05
 Tasks: 101 total,   1 running,  99 sleeping,   1 stopped,   0 zombie
 %Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
 MiB Mem :   1992.0 total,   1537.0 free,    235.0 used,    220.0 buff/cache
@@ -15,44 +22,67 @@ MiB Swap:   2047.9 total,   2047.9 free,      0.0 used.   1555.3 avail Mem
      3 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_gp
      4 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_par_gp
      5 root      20   0       0      0      0 I   0.0   0.0   0:00.00 slub_flushwq
+```  
 
 You can customize the top command's output by pressing various keys, such as:
 
 h: Display the help menu
-1: Toggle between per-CPU and aggregate CPU utilization
-f: Manage the columns displayed
-o: Customize the sort order
-u: Filter processes by a specific user
 
+1: Toggle between per-CPU and aggregate CPU utilization
+
+f: Manage the columns displayed
+
+o: Customize the sort order
+
+u: Filter processes by a specific user
 
 Some of the commonly used options include:
 
 -d: Set the delay between updates (default is 3 seconds)
+
 -n: Specify the number of iterations (default is unlimited)
+
 -p: Monitor specific process IDs
+
 -u: Display processes owned by a specific user
+
 -o: Sort the process list by a specific column
 
-$ top -o %MEM -n 5
+
+
+```bash
+top -o %MEM -n 5
+```
 to display the top 5 processes sorted by memory usage, you can run
   
 2.Ps
+
 ps command is a fundamental tool for system administrators and developers, providing detailed information about the processes currently running, including their process ID, user, CPU and memory usage, and more. 
 
-  ps
+Input
 
+```bash
+  ps
+```
+Output
+
+```text
     PID TTY          TIME CMD
  1234 pts/0    00:00:00 bash
  5678 pts/0    00:00:00 ps
-
-  The -e option displays all processes, and the -f option provides a full-format listing, including the user ID (UID), process ID (PID), parent process ID (PPID), CPU usage (C), start time (STIME), terminal (TTY), CPU time (TIME), and the command (CMD).
+```
+The -e option displays all processes,
+the -f option provides a full-format listing, including the user ID (UID), process ID (PID), parent process ID (PPID), CPU usage (C), start time (STIME), terminal (TTY), CPU time (TIME), and the command (CMD).
   -u or --user option. This option allows you to display processes owned by a specific user.
 
+```bash
   ps -u labex
-
+```
 to view the CPU and memory usage of all processes, you can use the ps command with the -o option to customize the output:
-
+```bash
 ps -eo pid,user,%cpu,%mem,cmd
+```
+
   3.Free
   free command is a useful tool for monitoring the system's memory usage, including both physical memory (RAM) and swap space.
 
