@@ -1,7 +1,7 @@
 
 ## 1.Ls :list files and directories, 
 Options
-## ls-l->displays the long-format listing
+a)ls-l->displays the long-format listing
 Input
 ```bash
 ls -l
@@ -9,7 +9,7 @@ ls -l
 Output
 -rw-r--r-- 1 labex labex 0 Apr 12 12:34 file1.txt
 
-ls-a->displays all files, including hidden files (files starting with a dot)
+b)ls-a->displays all files, including hidden files (files starting with a dot)
 
 Input
 ```bash
@@ -18,17 +18,19 @@ ls -a
 Output
 . .. .hidden_file file1.txt file2.txt folder1 folder2
 
-Ls-h->(human-readable) option to display file sizes in a more readable format:
+c)Ls-h->(human-readable) option to display file sizes in a more readable format:
+
 input
 
 ```bash
 ls -lh -h
 ```
-
 Output
 drwxr-xr-x 2 labex labex 4.0K Apr 12 12:34 folder1
-Ls-R->list the contents of the current directory and its subdirectories, you can use the -R (recursive) option:
+
+d)ls-R->list the contents of the current directory and its subdirectories, you can use the -R (recursive) option:
 Input
+
 ```bash
 ls -R ~/project 
 ```
@@ -38,18 +40,22 @@ Output
 
 ## 2. Cd- change the current working directory
 
-cd ~ or just cd to go to the home directory (/home/labex)
-cd - to go to the previous working directory
-cd .. to go to the parent directory of the current working directory
+```bash
+cd ~ #or just cd to go to the home directory (/home/labex)
+cd - #to go to the previous working directory
+cd .. #to go to the parent directory of the current working directory
+```
+
 
 ## 3.Mkdir -create new directories. 
 ```bash
 mkdir dir1 dir2 dir3
-mkdir -p command allows you to create a directory structure with multiple levels in a single command. 
+mkdir -p #command allows you to create a directory structure with multiple levels in a single command. 
 mkdir -p projects/web-app/src/components
 ```
 
 ## 4.touch  create new files or update the timestamps of existing files.
+Options
 -a: Updates the access time of the file.
 -m: Updates the modification time of the file.
 -d or -t: Sets the access and modification times to the specified date and time.
@@ -70,24 +76,26 @@ This will copy file1.txt and file2.txt to the dir1 directory.
 
 ## 6. mv command is used to move or rename files and directories.
 mv [options] source destination
-
+Options
 -i: Interactive mode, prompts before overwriting
 -f: Force mode, overwrites without prompting
 -v: Verbose mode, shows the details of the move operation
+
 Rename a file 
 
 ```bash
 mv file1.txt file2.txt
 ```
-
 Move a file to a new directory 
 
-mv file1.txt ~/project/new_dir/
 
+```bash
+mv file1.txt ~/project/new_dir/
+```
 
 ## 7.rm command to remove files and directories. 
 rm [options] file(s)
-
+Options
 -f: Force removal of files and directories without prompting for confirmation.
 -r: Recursively remove directories and their contents.
 -i: Prompt for confirmation before removing each file or director
@@ -116,7 +124,7 @@ ln -s original_file symbolic_link_name
 
 ## 9. cat command, which is a versatile tool for concatenating and displaying the contents of text files
 Cat [options] [file(s)]
-
+Options
 -n: Displays the output with line numbers.
 -E: Displays a $ character at the end of each line.
 -s: Squeezes multiple adjacent empty lines into one.
@@ -149,16 +157,6 @@ The less command opens the file in a pager, allowing you to navigate through t
 n: Move to the next occurrence of the search term
 q: Quit the less pager
 
-earch and Highlight Text in less
-/Alice
-
-To move to the next occurrence, press n. To move to the previous occurrence, press N.
-
-to highlight all occurrences of the word "Alice", use the following command:
-
--P'Alice'
-
-
 ## 11.more command in Linux, which is a text file pager that allows you to view the contents of a file one page at a time.
 
 ```bash
@@ -175,12 +173,14 @@ This will open the example.txt file and display its contents one page at a tim
 ```bash
 Tree
 ```
+```text
 . 
 ├── project 
 │ └── README.md 
 └── .zshrc
-
+```
 ## 13.du (disk usage) command in Linux to estimate file space usage and provide information about the disk space occupied by files and directories.
+Options
 -h: Display the output in human-readable format (e.g., 1.2M instead of 1234567)
 -s: Display the total size of a directory, instead of the size of each file/directory within it
 -c: Display the grand total at the end of the output
@@ -193,14 +193,14 @@ exclude specific directories from the du measurement,
 du -h -d 1 --exclude=subdir1 ~/project/main_dir
 ```
 ## 14.The df (disk free) command is an essential utility for displaying information about total, used, and available space on your system's filesystems
-
-
+Input
 ```bash
 df
 ```
 Output
+```text
 Filesystem 1K-blocks Used Available Use% Mounted on overlay 20971520 128764 20842756 1% / tmpfs 65536 0 65536 0% /dev tmpfs 8052892 0 8052892 0% /sys/fs/cgroup shm 65536 0 65536 0% /dev/shm /dev/nvme1n1 104806400 20643324 84163076 20% /etc/hosts tmpfs 8052892 0 8052892 0% /proc/acpi tmpfs 8052892 0 8052892 0% /proc/scsi tmpfs 8052892 0 8052892 0% /sys/firmware
-
+```
 disk usage for the root directory, represented by /:
 
 ```bash
@@ -215,8 +215,8 @@ df -h .
 
 ## 15.find command to search for files and directories based on various criteria, such as name, file type, size, and more.
 find [path] [expression]
-Search for all files in the current directory:
 
+Search for all files in the current directory:
 Input
 ```bash
 find .
@@ -224,15 +224,12 @@ find .
 Output
 . ./file1.txt ./file2.txt ./directory1 ./directory1/file3.txt
 
-Search for all files with the .txt extension in the current directory:
-
-To search for files by name, you can use the -name
+Search for all files with the .txt extension in the current directory and to search for files by name, you can use the -name
 
 ```bash
 find . -name "*.txt"
 ```
 ./file1.txt ./file2.txt ./directory1/file3.txt
-
 
 Search for all directories in the current directory:
 
@@ -247,10 +244,9 @@ find . -size +1M
 ```
 Search for files by file type:
 To search for files by their type, you can use the -type option followed by the file type character. The common file type characters are:
-of: regular file
-od: directory
-ol: symbolic link
-
+f: regular file
+d: directory
+l: symbolic link
 
 Find and delete files:
 
