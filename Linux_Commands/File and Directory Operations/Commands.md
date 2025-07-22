@@ -1,13 +1,20 @@
 
-## 1.Ls :list files and directories, 
+## 1.ls :list files and directories, 
 Options
+
 a)ls-l->displays the long-format listing
+
 Input
+
 ```bash
 ls -l
 ```
 Output
+
+```text
 -rw-r--r-- 1 labex labex 0 Apr 12 12:34 file1.txt
+```
+
 
 b)ls-a->displays all files, including hidden files (files starting with a dot)
 
